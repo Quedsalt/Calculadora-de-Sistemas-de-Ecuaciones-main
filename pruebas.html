@@ -7,30 +7,68 @@
     <link rel="stylesheet" href="/CSS/Style.css">
   </head>
   <body>
-    <h1>Calculadora de Sistema de Ecuaciones</h1>
-    <div class="ContenedorMetodos">
-        <h2>Metodos</h2>
-        
-        <div class="ContenedorCartas">
-            <div class="Cartas">
-                <h2>Gauss Jordan</h2>
-                <p>
-                    Es una técnica para resolver sistemas de ecuaciones lineales<br>
-                    transformando la matriz del sistema en una matriz identidad mediante operaciones elementales.<br>
-                    Al final, los valores de las incógnitas aparecen directamente en la columna de resultados.
-                </p>
-            </div>
-            <div class="Cartas">
-                <h2>Cramer</h2>
-                <p>
-                    Se usa para sistemas con igual número de ecuaciones que de incógnitas y que tengan solución única.<br>
-                    Consiste en calcular determinantes:<br>
-                    (donde se reemplaza su columna por los resultados del sistema)<br>
-                    entre el determinante de la matriz original.<br>
-                    Es sencillo para sistemas pequeños..
-                </p>
-            </div>
+    <header>
+      <h1>Logo</h1>
+      <h2>Calculadora</h2>
+    </header>
+    <div>
+      <ul class="subHeader">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+      </ul>
+    </div>
+    <div class="contentGlobal">
+      <div>
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+        </ul>
+      </div>
+      <div>
+        <div id="metodos"><H2>Metodos</H2></div>
+        <div class="headerOperacion">
+          <button>Generar</button>
+          <table>
+            <tr>
+              <td><input type="number" value="3"></td>
+              <td>X</td>
+              <td><input type="number" value="4"></td>
+            </tr>
+          </table>
         </div>
+        <div class="contentMatriz">
+          <h2>Matriz</h2>
+          <div></div>
+        </div>
+        <div>
+          <div class="Solucion">
+            <H3>Solucion</H3>
+            <p id="output"></p>
+          </div>
+        </div>
+        <div class="pasos">
+          <h3>Pasos</h3>  
+        </div>
+      </div>
+      <div>
+        <h2>Estudios</h2>
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+        </ul>
+      </div>
     </div>
     <script src="/Gauss-Jordan-main/ScriptGauss.js"></script>
     <script src="/Cramer/ScriptCramer.js"></script>
