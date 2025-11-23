@@ -1,34 +1,41 @@
 body {
   font-family: Arial, sans-serif;
   margin: 30px;
-  background-color: #001029;
-  color: #ffffff;
+  background: linear-gradient(#e8fffe, rgb(163, 255, 250), #e8fffe);
+  color: #ffffff  ;
 }
 
 button {
   padding: 8px 15px;
-  background-color: #3AC2FC;
-  color: white;
+  background-color: #ffffff;
+  color: red;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #2b90bb;
+#GuardarBoton {
+  background-color: #FF2B00;
+  color: #ffffff;
 }
 
+button:hover {
+  background-color: hsl(341, 100%, 94%);
+}
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 input {
-  width: 50px;
-  height: 50px;
-  text-align: right;
+  text-align: center;
 }
 
 a {
   text-decoration: none;
-  color: #ffffff;
+  color: red;
 }
 /*Principal*/
 
@@ -39,19 +46,20 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #5C67FF;
+  background-color: #FF2B00;
   padding: 10px;
-  border: 2px solid white;
+  border: 2px solid #FF2B00;
 }
 
 .subHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #585eb9;
+  background-color: #ffffff;
+  color: red;
   padding: 10px;
   margin: 0px 0px 5px 0px;
-  border: 2px solid white;
+  border: 2px solid #FF2B00;
 }
 
 .contentGlobal{
@@ -62,7 +70,7 @@ header {
 .headerOperacion {
   width: 850px;
   display: flex;
-  background-color: #5C67FF;
+  background-color: #FF2B00;
   padding: 10px;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -71,35 +79,46 @@ header {
   justify-content: space-between;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  border: 2px solid white;
+  border: 2px solid #FF2B00;
 }
 
 input {
   width: 30px;
   height: 20px;
+  border-color: #FF2B00;
 }
 
 #metodos {
   display: flex;
   justify-content: space-around;
+  color: #FF2B00;
 }
 
 .Solucion {
   font-size: 1.2em;
   padding: 10px;
-  background-color: #585eb9;
-  border: 2px solid white;
+  background-color: #FF2B00;
+  border: 2px solid #FF2B00;
   border-top: 0px;
 }
 
 .contentMatriz {
   display: flex;
-  background-color: #77B5CD;
+  background-color: #ffffff;
   height: 500px;
-  border: 2px solid white;
+  border: 2px solid #FF2B00;
+  color: #FF2B00;
   border-top: 0px;
   flex-direction: column;
   align-items: center;
+  gap: 30px;
+}
+
+.H2MatrizContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
 }
 
 .contentMatriz h2, .pasos h3 {
@@ -108,8 +127,8 @@ input {
 }
 
 .pasos {
-  background-color: #011d4b;
-  border: 2px solid white;
+  background-color: #A31B00;
+  border: 2px solid #FF2B00;
   border-top: 0px;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
@@ -119,12 +138,13 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #585eb9;
+  background-color: #ffffff;
+  color: #FF2B00;
   width: 265px;
   box-sizing: border-box;
   margin-top: 68px;
 
-  border: 2px solid white;
+  border: 2px solid #FF2B00;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   border-bottom-left-radius: 4px;
