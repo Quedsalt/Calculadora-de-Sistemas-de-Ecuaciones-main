@@ -48,7 +48,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #B1B6FF;
+  background-color: #585eb9;
   padding: 10px;
   margin: 0px 0px 5px 0px;
   border: 2px solid white;
@@ -87,7 +87,7 @@ input {
 .Solucion {
   font-size: 1.2em;
   padding: 10px;
-  background-color: #B1B6FF;
+  background-color: #585eb9;
   border: 2px solid white;
   border-top: 0px;
 }
@@ -119,7 +119,7 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #B1B6FF;
+  background-color: #585eb9;
   width: 265px;
   box-sizing: border-box;
   margin-top: 68px;
