@@ -1,115 +1,79 @@
-// Funcion para comparar arrays
-function arraysIguales(arr1, arr2){
-    if (arr1.length !== arr2.length){
+function arraysIguales(arr1, arr2) {
+    if (!Array.isArray(arr1) || !Array.isArray(arr2) || arr1.length !== arr2.length) {
         return false
     }
 
-    for (let i= 0; i <arr1.length; i++){
-        if (Math.abs(arr1[i] - arr2[i]) > 1e-10){
+    for (let i = 0; i < arr1.length; i++) {
+        if (!Array.isArray(arr1[i]) || !Array.isArray(arr2[i]) || arr1[i].length !== arr2[i].length) {
             return false
         }
-    }
+        for (let j = 0; j < arr1[i].length; j++) {
+            const val1 = arr1[i][j]
+            const val2 = arr2[i][j]
 
+            if (typeof val1 === 'number' && typeof val2 === 'number') {
+                if (Math.abs(val1 - val2) > 1e-10) {
+                    return false
+                }
+            } else if (val1 !== val2) {
+                return false
+            }
+        }
+    }
     return true
 }
 
 function GaussJordan(){
     document.getElementById("metodosh2").innerHTML = "Gauss Jordan"
-    contenedorPrincipal.innerHTML = ""
-    contenedorGuardar.style.display = "none"
     document.getElementById("output").innerHTML = ""
 }
 
-// Matrices objetivo
-let matrizFinal = [...fila1.slice(0, 3), ...fila2.slice(0, 3), ...fila3.slice(0, 3)]
-let matrizIdentidad = [
-[1, 0, 0],
-[0, 1, 0],
-[0, 0, 1]
-]
-
-let paso = 0
-const maxPasos = 20
-
-//operacion en funcion resultado para evitar problemas
 function resultado() {
-    while (!arraysIguales(matrizFinal, matrizIdentidad) && paso < maxPasos) {
-        paso++
+    const NumFilas = parseInt(document.getElementById("filasInput").value)
+    const NumColumnas = parseInt(document.getElementById("columnasInput").value)
 
-        if (fila1[0] !== 1 && fila1[0] !== 0){ // Se agrega verificación para evitar dividir por 0
-            let factor = 1 / fila1[0]
-
-            for(let i = 0; i < 4; i++){
-                fila1[i] *= factor
-            }
-        }
-
-        if (fila2[0] !== 0){
-            let factor = -fila2[0] / fila1[0]
-
-            for (let i = 0; i < 4; i++){
-
-                fila2[i] += factor * fila1[i]
-            }
-        }
-
-        if (fila3[0] !== 0){
-            let factor = -fila3[0] / fila1[0]
-            for (let i = 0; i < 4; i++){
-                fila3[i] += factor * fila1[i]
-            }
-        }
-
-        if (fila2[1] !== 1 && fila2[1] !== 0){
-            let factor = 1 / fila2[1]
-            for(let i = 0; i < 4; i++){
-                fila2[i] *= factor
-            }
-        }
-
-        if (fila1[1] !== 0){
-            let factor = -fila1[1] / fila2[1]
-
-            for (let i = 0; i < 4; i++){
-                fila1[i] += factor * fila2[i]
-            }
-        }
-
-        if (fila3[1] !== 0){
-            let factor = -fila3[1] / fila2[1]
-
-            for (let i = 0; i < 4; i++){
-                fila3[i] += factor * fila2[i]
-            }
-        }
-
-        if (fila3[2] !== 1 && fila3[2] !== 0){
-            let factor = 1 / fila3[2]
-            for(let i = 0; i < 4; i++){
-                fila3[i] *= factor
-            }
-        }
-
-        if (fila1[2] !== 0){
-            let factor = -fila1[2] / fila3[2]
-
-            for (let i = 0; i < 4; i++){
-                fila1[i] += factor * fila3[i]
-            }
-        }
-
-        if (fila2[2] !== 0){
-            let factor = -fila2[2] / fila3[2]
-
-            for (let i = 0; i < 4; i++){
-                fila2[i] += factor * fila3[i]
-            }
-        }
-
-        // Actualiza la matriz para la condición del bucle
-        matrizFinal = [...fila1.slice(0, 3), ...fila2.slice(0, 3), ...fila3.slice(0, 3)]
+    if (NumFilas !== 3 || NumColumnas !== 4) {
+        document.getElementById("output").innerHTML = 
+        "El método de Gauss Jordan solo funciona con 3 filas y 4 columnas <br> (Perdón, pero estoy trabajando para que puedas solucionar matrices de otros tamaños)."
+        return
     }
-    // Imprime resultados
-    document.getElementById('output').innerHTML = 
-    `X: ${fila1[3]}<br>Y: ${fila2[3]}<br>Z: ${fila3[3]}`
+
+    const matriz = []
+    for (let i = 0; i < NumFilas; i++) {
+        const fila = []
+        for (let j = 0; j < NumColumnas; j++) {
+            const valor = parseInt(document.getElementById(`input_${i}_${j}`).value) || 0
+            fila.push(valor)
+        }
+        matriz.push(fila)
+    }
+
+    for (let i = 0; i < 3; i++) {
+        let pivote = matriz[i][i]
+
+        if (pivote === 0) {
+             document.getElementById("output").textContent = 
+              "El sistema no tiene solución única (pivote = 0)."
+            return
+        }
+
+        for (let j = 0; j < 4; j++) {
+            matriz[i][j] /= pivote
+        }
+
+        for (let k = 0; k < 3; k++) {
+            if (k !== i) {
+                let factor = matriz[k][i]
+                for (let j = 0; j < 4; j++) {
+                    matriz[k][j] -= factor * matriz[i][j]
+                }
+            }
+        }
+    }
+
+    const x = Math.round(matriz[0][3])
+    const y = Math.round(matriz[1][3])
+    const z = Math.round(matriz[2][3])
+
+    document.getElementById('output').innerHTML = `X: ${x}<br>Y: ${y}<br>Z: ${z}`
 }
