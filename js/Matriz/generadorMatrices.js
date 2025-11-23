@@ -25,3 +25,16 @@ function mostrarMatriz() {
 
   contenedorGuardar.style.display = "block"
 }
+
+function botonGuardarf() {
+  if (botonGuardar) {
+    const metodosh2 = document.getElementById("metodosh2").textContent.trim()
+    if (metodosh2 === "Cramer") {
+      guardarMatriz()
+    } else if (metodosh2 === "Gauss Jordan"){
+      resultado()
+    }
+  } else {
+    document.getElementById("output").innerHTML = "NO hay seleccionada un metodo seleccionado"
+  }
+}
