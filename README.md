@@ -9,7 +9,7 @@ Ya disponible los 2 metodos (Gauss Jordan y Cramer)
 - Se Mejoro la organizacion de los archivos .js
 - Se agrego el metodo de Cramer
 - Se agrego el metodo de Gaus Jordan(con un codigo nuevo)
-- Ya se pueden usar los 2 metodos cuando queran
+- Ya se pueden usar los 2 metodos cuando quieran
 ## EN CONSTRUCCION:
 - se agregara la calculadora
 - Se agregara los pasos 
