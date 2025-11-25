@@ -52,4 +52,8 @@ function subHeaderStyle(){
   headerOperacion.style.justifyContent = "space-between"
   const H2Calculadora = document.getElementById("h2Calculadora")
   H2Calculadora.style.display = "none"
+  const H2MatrizContent = document.getElementById("H2MatrizContent")
+  H2MatrizContent.style.display = "block"
+  const Calculadora = document.getElementById("Calculadora")
+    Calculadora.style.display = "none"
 }
