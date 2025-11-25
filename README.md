@@ -14,7 +14,7 @@ y algunas otras cosas
 - se agregara funcionalidad a la calculadora
 - Se agregara los pasos
 
-##Anterior Actualizacion:
+## Anterior Actualizacion:
 Ya disponible los 2 metodos (Gauss Jordan y Cramer)
 
 - Se modifico el diseño de colores de la pagina
