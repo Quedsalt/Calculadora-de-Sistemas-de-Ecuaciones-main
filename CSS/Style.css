@@ -67,7 +67,7 @@ header {
   justify-content: space-between;
 }
 
-.headerOperacion {
+#headerOperacion {
   width: 850px;
   display: flex;
   background-color: #FF2B00;
