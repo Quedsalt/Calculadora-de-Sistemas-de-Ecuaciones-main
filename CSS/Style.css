@@ -126,6 +126,7 @@ input {
 .contentMatriz h2, .pasos h3 {
   margin: 0px;
   padding: 10px;
+  text-align: center;
 }
 
 .pasos {
