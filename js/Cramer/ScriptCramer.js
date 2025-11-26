@@ -65,5 +65,5 @@ function guardarMatriz() {
   const y = detAy / detA
   const z = detAz / detA
 
-  document.getElementById("output").innerHTML = `Solucion:<br>` + `x = ${x}<br>y = ${y}<br>z = ${z}`
+  document.getElementById("output").innerHTML = `x = ${x}<br>y = ${y}<br>z = ${z}`
 }
