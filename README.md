@@ -50,7 +50,7 @@ pruebas.html
 
 ## 🙌 Contribuciones
 
-¡Este es un proyecto en constante evolución! Si tienes ideas, sugerencias o deseas colaborar, no dudes en informar *errores*.
+¡Este es un proyecto en constante evolución! Si tienes ideas, sugerencias o deseas colaborar o informar *errores* No dudes en comunicarte con migo.
 
 ---
 
