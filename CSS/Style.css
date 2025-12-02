@@ -115,7 +115,7 @@ input {
 }
 
 .contentMatriz {
-  height:  clamp(300px, 5vw, 500px);
+  height: clamp(300px, 70vh, 500px);
   display: flex;
   background-color: #ffffff;
   border: 2px solid #FF2B00;
@@ -130,7 +130,7 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 .contentMatriz h2, .pasos h3 {
@@ -199,7 +199,7 @@ input {
   font-size: 20px;
 }
 
-@media (min-width:270px) and (max-width:815px){
+@media (min-width:270px) and (max-width:855px){
   h1 {
     font-size: 20px;
   }
@@ -220,12 +220,8 @@ input {
   .contentGlobal {
     grid-template-columns: 1fr;
   }
-  #H2MatrizContent{
-    gap: 0px;
-  }
-
   .contentMatriz {
-    height: 300px;
+    height: clamp(300px, 70vh, 700px);
   }
 
   #headerOperacion{
