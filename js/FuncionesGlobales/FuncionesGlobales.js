@@ -14,8 +14,6 @@ function mostrarMatriz() {
       const inputNumber = document.createElement("input")
       inputNumber.type = "number"
       inputNumber.id = `input_${i}_${j}`
-      inputNumber.style.width = "50px"
-      inputNumber.style.height = "50px"
       inputNumber.style.textAlign = "center"
       filaDiv.appendChild(inputNumber)
     }
