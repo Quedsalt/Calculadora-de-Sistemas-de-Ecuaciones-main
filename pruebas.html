@@ -14,11 +14,8 @@
     <div>
       <ul class="subHeader">
         <li><a href="#" onclick="llamarCalculadora()"><h4>CALCULADORA</h4></a></li>
-        <li><h4>2</h4></li>
-        <li><h4>3</h4></li>
-        <li><h4>4</h4></li>
-        <li><h4>5</h4></li>
-        <li><h4>6</h4></li>
+        <li><a href="#" onclick="GaussJordan()"><h4>GAUSS JORDAN</h4></a></li>
+        <li><a href="#" onclick="cramer()"><h4>CRAMER</h4></a></li>
       </ul>
     </div>
     <div class="contentGlobal">
@@ -27,16 +24,12 @@
         <ul>
           <li><a href="#" onclick="GaussJordan()"><h3>Gauss Jordan</h3></a></li>
           <li><a href="#" onclick="cramer()"><h3>Cramer</h3></a></li>
-          <li><h3>3</h3></li>
-          <li><h3>4</h3></li>
-          <li><h3>5</h3></li>
-          <li><h3>6</h3></li>
         </ul>
       </div>
       <div>
-        <div id="metodos"><H2 id="metodosh2">Cramer</H2></div>
         <div id="headerOperacion">
           <button id="botonGenerar" onclick="mostrarMatriz()">Generar</button>
+          <div id="metodos"><H2 id="metodosh2">Cramer</H2></div>
           <h2 id="h2Calculadora" style="display: none;">Calculadora</h2>
           <table id="tablaGMatriz">
             <tr>
@@ -51,7 +44,7 @@
             <h2 id="h2TopOperarcion">Matriz</h2>
             <div id="contenedorMatriz"></div>
           </div>
-          <div id="GuardarMatriz"><button id="GuardarBoton" onclick="botonGuardarf()">Guardar</button></div>
+          <div id="GuardarMatriz"><button id="GuardarBoton" onclick="botonGuardarf()"><a id="GuardarBoton" href="#output">Guardar</a></button></div>
           <div id="Calculadora">
             <div>
               <div class="Pantalla"></div>
