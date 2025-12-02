@@ -22,6 +22,8 @@ function mostrarMatriz() {
   }
 
   contenedorGuardar.style.display = "block"
+  const contentMatriz = document.getElementById("contentMatriz")
+  contentMatriz.style.justifyContent = "space-around"
 }
 
 function botonGuardarf() {
@@ -53,5 +55,7 @@ function subHeaderStyle(){
   const H2MatrizContent = document.getElementById("H2MatrizContent")
   H2MatrizContent.style.display = "block"
   const Calculadora = document.getElementById("Calculadora")
-    Calculadora.style.display = "none"
+  Calculadora.style.display = "none"
+  const contentMatriz = document.getElementById("contentMatriz")
+  contentMatriz.style.justifyContent = "flex-start"
 }
