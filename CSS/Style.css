@@ -76,6 +76,7 @@ header {
   display: flex;
   background-color: #FF2B00;
   padding: 15px 10px 15px 10px;
+  margin-top: 70px;
 
   box-sizing: border-box;
   justify-content: space-between;
@@ -92,8 +93,8 @@ header {
 }
 
 input {
-  width:  clamp(50px, 5vw, 100px);
-  height: clamp(50px, 5vw, 100px);
+  width: 50px;
+  height: 50px;
   border: 2px solid #FF2B00;
   border-radius: 4px;
   box-sizing: border-box;
@@ -114,9 +115,9 @@ input {
 }
 
 .contentMatriz {
+  height:  clamp(300px, 5vw, 500px);
   display: flex;
   background-color: #ffffff;
-  height: 500px;
   border: 2px solid #FF2B00;
   color: #FF2B00;
   border-top: 0px;
@@ -129,7 +130,7 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 100px;
+  gap: 10px;
 }
 
 .contentMatriz h2, .pasos h3 {
@@ -198,7 +199,7 @@ input {
   font-size: 20px;
 }
 
-@media (min-width:360px) and (max-width:640px){
+@media (min-width:270px) and (max-width:815px){
   h1 {
     font-size: 20px;
   }
@@ -229,6 +230,7 @@ input {
 
   #headerOperacion{
     padding: 5px;
+    margin-top: 0px;
   }  
 
 }
