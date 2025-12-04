@@ -1,8 +1,6 @@
----
-
 # 🧮 Calculadora de Sistemas de Ecuaciones
 
-Este proyecto reúne los distintos métodos de resolución de sistemas de ecuaciones que voy aprendiendo a lo largo de mis estudios, junto con herramientas útiles para facilitar su comprensión y aplicación.
+Este proyecto reúne los distintos métodos de resolución de sistemas de ecuaciones que he ido aprendiendo a lo largo de mis estudios, junto con herramientas útiles para facilitar su comprensión y aplicación.
 
 El objetivo es ofrecer una calculadora educativa intuitiva, visual y adaptable que no solo resuelva sistemas, sino que también muestre los pasos del proceso y permita elegir entre diferentes métodos y diseños.
 
@@ -13,47 +11,59 @@ El objetivo es ofrecer una calculadora educativa intuitiva, visual y adaptable q
 Para probar la calculadora actual, abre el archivo:
 
 ```
-pruebas.html
+index.html
 ```
+
+---
+
+## 📅 Última actualización: 3 de diciembre de 2024
 
 ---
 
 ## 🛠️ Estado del proyecto
 
-### ✅ Últimas actualizaciones (2 diciembre 2025)
-
-- **Diseño completamente adaptativo**: Toda la interfaz —incluyendo la calculadora y las opciones— se ajusta a cualquier tamaño de pantalla (móvil, tablet, escritorio).
-- **Correcciones visuales**: Se resolvieron errores de estilo que afectaban la apariencia de la calculadora en ciertos dispositivos.
+### ✅ Última actualización
+- **Optimización de código**: Esta actualización mejoró la optimización del código del archivo HTML a uno más limpio y semántico, con mejoras en accesibilidad (etiquetas ARIA, labels en inputs) y estructura (uso de `<section>` y `<nav>`).
+- **Reorganización de archivos JS**: Se modificó la organización de los archivos `.js` para mayor claridad y mantenibilidad.
+- **Renombrado de archivos**: Se cambió `FuncionesGlobales.js` a `global.js` y `pruebas.html` a `index.html` para una nomenclatura más estándar y profesional.
 
 ### 🚧 En desarrollo
-
-- ✨ **Funcionalidad completa de la calculadora**: Próximamente resolverá diferentes operaciones basicas (suma. resta, multiplicacion y divicion).
-- 📝 **Mostrar pasos de resolución**: El usuario podrá ver, paso a paso, cómo se resuelve cada sistema.
-- 🎨 **Múltiples temas de diseño**: Se implementará la opción de elegir entre distintos estilos visuales para la calculadora.
+- **Optimización completa del código**: Se está trabajando en refactorizar el JavaScript para generar elementos dinámicamente (como la navegación), mejorar el rendimiento y reducir redundancias.
+- **Funcionalidad de la calculadora básica**: Implementación de operaciones aritméticas simples (suma, resta, multiplicación, división) en la interfaz de calculadora.
 
 ---
 
 ## 📜 Actualizaciones anteriores
 
-- Se introdujo un **layout adaptativo inicial**.
-- Se realizó una **pequeña mejora en el diseño general** de la página para mayor coherencia visual.
+- **Diseño completamente adaptativo**: Toda la interfaz —incluyendo la calculadora y las opciones— se ajusta a cualquier tamaño de pantalla (móvil, tablet, escritorio).
+- **Correcciones visuales**: Se resolvieron errores de estilo que afectaban la apariencia de la calculadora en ciertos dispositivos.
+
+---
+
+## 🛠️ Tecnologías usadas
+
+- **HTML5**: Estructura semántica y accesible de la página.
+- **CSS3**: Estilos responsivos y diseño visual.
+- **JavaScript (Vanilla)**: Lógica para generar matrices, manejar cálculos y navegación dinámica.
 
 ---
 
 ## 📚 Próximos pasos
 
-- Agregar soporte para sistemas de 2x2, 3x3 y más.
-- Incluir validación de entradas y mensajes de error claros.
-- Documentación clara de cada método implementado.
+- **Soporte para más tamaños de sistemas**: Agregar validación y resolución para matrices de 2x2, 3x3 y superiores.
+- **Validación de entradas**: Implementar mensajes de error claros para entradas inválidas (ej. números no numéricos).
+- **Documentación de métodos**: Crear guías detalladas para cada método (Cramer, Gauss-Jordan) con explicaciones matemáticas.
+- **Funcionalidad completa de la calculadora**: Resolver operaciones básicas (suma, resta, multiplicación, división) y mostrar resultados en tiempo real.
+- **Mostrar pasos de resolución**: Permitir al usuario ver el proceso paso a paso para cada sistema resuelto.
+- **Múltiples temas de diseño**: Implementar opciones para cambiar estilos visuales (modo oscuro, colores personalizados).
+- **Mejoras en accesibilidad**: Añadir soporte completo para lectores de pantalla y navegación por teclado.
 
 ---
 
 ## 🙌 Contribuciones
 
-¡Este es un proyecto en constante evolución! Si tienes ideas, sugerencias o deseas colaborar o informar *errores* No dudes en comunicarte con migo.
+¡Este es un proyecto en constante evolución! Si tienes ideas, sugerencias o deseas colaborar, informar errores o proponer mejoras, no dudes en comunicarte conmigo. Puedes enviarme un mensaje.
 
----
-
-## 📅 Última actualización: 2 de diciembre de 2025
+Este proyecto es de código abierto
 
 ---
