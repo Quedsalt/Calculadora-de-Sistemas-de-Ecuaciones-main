@@ -5,6 +5,10 @@ body {
   color: #ffffff;
 }
 
+.logo {
+  font-size: 40px;
+}
+
 button {
   padding: 8px 15px;
   color: red;
@@ -16,7 +20,7 @@ button {
 #botonGenerar {
   height: 35px;
 }
-#GuardarBoton {
+#GuardarBoton, #GuardarBoton a{
   background-color: #FF2B00;
   color: #ffffff;
 }
@@ -52,7 +56,7 @@ header {
   border: 2px solid #FF2B00;
 }
 
-.subHeader {
+.subHeader ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -60,9 +64,11 @@ header {
   color: red;
   margin: 0px 0px 5px 0px;
   border: 2px solid #FF2B00;
+  padding: 10px;
+  font-size: large;
 }
 
-.subHeader, Header {
+Header {
   padding: 0px 10px 0px;
 }
 
@@ -194,7 +200,7 @@ input {
   flex-direction: column;
 }
 
-#simbolos, #numeros {
+.simbolos, .numeros {
   width: clamp(40px, 12vmin, 50px);
   height: clamp(40px, 12vmin, 50px);
   display: flex;
@@ -240,7 +246,7 @@ input {
 
 @media (max-height:625PX){
 
-  #simbolos, #numeros {
+  .simbolos, .numeros {
     width: clamp(45px, 10vmin, 150px);
     height: clamp(10px, 4vmin, 40px);
   }

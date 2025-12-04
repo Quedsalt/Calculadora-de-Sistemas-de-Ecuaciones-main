@@ -8,43 +8,47 @@
   </head>
   <body>
     <header>
-      <h1>Logo</h1>
-      <h2>Calculadora</h2>
+      <div class="logo">Logo</div>
+      <h1>Calculadora</h1>
     </header>
-    <div>
-      <ul class="subHeader">
-        <li><a href="#" onclick="llamarCalculadora()"><h4>CALCULADORA</h4></a></li>
-        <li><a href="#" onclick="GaussJordan()"><h4>GAUSS JORDAN</h4></a></li>
-        <li><a href="#" onclick="cramer()"><h4>CRAMER</h4></a></li>
+    <nav class="subHeader">
+      <ul>
+        <li><a class="boton-operacion" href="#" role="button" data-metodo="calculadora">Calculadora</a></li>
+        <li><a class="boton-operacion" href="#" role="button" data-metodo="gauss">Gauss Jordan</a></li>
+        <li><a class="boton-operacion" href="#" role="button" data-metodo="cramer">Cramer</a></li>
       </ul>
-    </div>
-    <div class="contentGlobal">
-      <div class="herramientas">
+    </nav>
+    <main class="contentGlobal">
+      <!--Barra lateral izquierda-->
+      <nav class="herramientas">
         <h2>Herramientas</h2>
         <ul>
-          <li><a href="#" onclick="GaussJordan()"><h3>Gauss Jordan</h3></a></li>
-          <li><a href="#" onclick="cramer()"><h3>Cramer</h3></a></li>
+          <li><a class="boton-operacion" href="#" role="button" data-metodo="calculadora">Calculadora</a></li>
+          <li><a class="boton-operacion" href="#" role="button" data-metodo="gauss">Gauss Jordan</a></li>
+          <li><a class="boton-operacion" href="#" role="button" data-metodo="cramer">Cramer</a></li>
         </ul>
-      </div>
-      <div>
+      </nav>
+      <!--Customizacion de las matrices-->
+      <section>
         <div id="headerOperacion">
-          <button id="botonGenerar" onclick="mostrarMatriz()">Generar</button>
-          <div id="metodos"><H2 id="metodosh2">Cramer</H2></div>
-          <h2 id="h2Calculadora" style="display: none;">Calculadora</h2>
+          <button id="botonGenerar">Generar</button>
+          <div id="metodos"><h2 id="metodosh2">Cramer</h2></div>
           <table id="tablaGMatriz">
             <tr>
-              <td><input type="number" value="3" id="filasInput" min="2" max="4"></td>
-              <td>X</td>
-              <td><input type="number" value="4" id="columnasInput" min="2" max="4"></td>
+              <td><label for="filasInput">Filas:</label><input type="number" value="3" id="filasInput" min="2" max="4"></td>
+              <td><label for="columnasInput">Columnas:</label><input type="number" value="4" id="columnasInput" min="2" max="4"></td>
             </tr>
           </table>
         </div>
-        <div class="contentMatriz" id="contentMatriz">
+        <!-- Seccion para la generacion de matrices y la calculadora-->
+        <section class="contentMatriz">
           <div id="H2MatrizContent">
             <h2 id="h2TopOperarcion">Matriz</h2>
+            <!--Creacion de la matriz en el archivo global.js-->
             <div id="contenedorMatriz"></div>
           </div>
-          <div id="GuardarMatriz"><button id="GuardarBoton" onclick="botonGuardarf()"><a id="GuardarBoton" href="#output">Guardar</a></button></div>
+          <div id="GuardarMatriz"><button id="GuardarBoton">Guardar</button></div>
+          <!--Estructura de la calculadora-->
           <div id="Calculadora">
             <div>
               <div class="Pantalla"></div>
@@ -52,61 +56,64 @@
             <div class="Botones">
               <table class="tablaBotones">
                 <tr>
-                  <td><button id="simbolos">(</button></td>
-                  <td><button id="simbolos">)</button></td>
-                  <td><button id="simbolos">%</button></td>
-                  <td><button id="simbolos">CE</button></td>
+                  <td><button class="simbolos" aria-label="Simbolo (">(</button></td>
+                  <td><button class="simbolos" aria-label="Simbolo )">)</button></td>
+                  <td><button class="simbolos" aria-label="Simbolo %">%</button></td>
+                  <td><button class="simbolos" aria-label="Clear Entry">CE</button></td>
                 </tr>
                 <tr>
-                  <td><button id="numeros">7</button></td>
-                  <td><button id="numeros">8</button></td>
-                  <td><button id="numeros">9</button></td>
-                  <td><button id="simbolos">/</button></td>
+                  <td><button class="numeros"  aria-label="numero 7">7</button></td>
+                  <td><button class="numeros"  aria-label="numero 8">8</button></td>
+                  <td><button class="numeros"  aria-label="numero 9">9</button></td>
+                  <td><button class="simbolos" aria-label="Simbolo dividir">/</button></td>
                 </tr>
                 <tr>
-                  <td><button id="numeros">4</button></td>
-                  <td><button id="numeros">5</button></td>
-                  <td><button id="numeros">6</button></td>
-                  <td><button id="simbolos">x</button></td>
+                  <td><button class="numeros"  aria-label="numero 4">4</button></td>
+                  <td><button class="numeros"  aria-label="numero 5">5</button></td>
+                  <td><button class="numeros"  aria-label="numero 6">6</button></td>
+                  <td><button class="simbolos" aria-label="Simbolo multiplicar">x</button></td>
                 </tr>
                 <tr>
-                  <td><button id="numeros">1</button></td>
-                  <td><button id="numeros">2</button></td>
-                  <td><button id="numeros">3</button></td>
-                  <td><button id="simbolos">-</button></td>
+                  <td><button class="numeros"  aria-label="numero 1">1</button></td>
+                  <td><button class="numeros"  aria-label="numero 2">2</button></td>
+                  <td><button class="numeros"  aria-label="numero 3">3</button></td>
+                  <td><button class="simbolos" aria-label="Simbolo menos">-</button></td>
                 </tr>
                 <tr>
-                  <td><button id="numeros">0</button></td>
-                  <td><button id="simbolos">.</button></td>
-                  <td><button id="simbolos">=</button></td>
-                  <td><button id="simbolos">+</button></td>
+                  <td><button class="numeros"  aria-label="numero 0">0</button></td>
+                  <td><button class="simbolos" aria-label="Simbolo .">.</button></td>
+                  <td><button class="simbolos" aria-label="Simbolo =">=</button></td>
+                  <td><button class="simbolos" aria-label="Simbolo +">+</button></td>
                 </tr>
               </table> 
             </div>
           </div>
-        </div>
-        <div>
+        </section>
+        <!--Soluciones creadas desde archivos .js-->
+        <section>
           <div class="Solucion">
-            <H3>Solucion</H3>
+            <h3>Solucion</h3>
             <p id="output"></p>
           </div>
-        </div>
-        <div class="pasos">
+        </section>
+        <!--Seccion de pasos en proximamente-->
+        <section class="pasos">
           <h3>Pasos</h3>  
-        </div>
-      </div>
-      <div class="estudios">
+        </section>
+      </section>
+      <!--Barra lateral derecha-->
+      <section class="estudios">
         <h2>Estudios</h2>
         <ul>
           <li><h3>Calculadora</h3></li>
           <li><h3>Gauss Jordan</h3></li>
           <li><h3>Cramer</h3></li>
         </ul>
-      </div>
-    </div>
-    <script src="/js/Gauss-Jordan-main/ScriptGauss.js"></script>
-    <script src="/js/Cramer/ScriptCramer.js"></script>
-    <script src="/js/FuncionesGlobales/FuncionesGlobales.js"></script>
-    <script src="/js/Calculadora/ScriptCalculadora.js"></script>
+      </section>
+    </main>
+    <script src="/js/ScriptCramer.js"></script>
+    <script src="/js/ScriptGauss.js"></script>
+    <script src="/js/ScriptCalculadora.js"></script>
+    <script src="/js/global.js"></script>
   </body>
 </html>

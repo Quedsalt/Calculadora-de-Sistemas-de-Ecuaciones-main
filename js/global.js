@@ -1,3 +1,9 @@
+document.getElementById("botonGenerar").addEventListener("click", mostrarMatriz)
+document.getElementById("GuardarBoton").addEventListener("click", botonGuardarF)
+document.getElementById('GuardarBoton').addEventListener('click', function() {
+  document.getElementById('output').scrollIntoView({ behavior: 'smooth' })
+})
+
 function mostrarMatriz() {
   const NumFilas = parseInt(document.getElementById("filasInput").value)
   const NumColumnas = parseInt(document.getElementById("columnasInput").value)
@@ -26,7 +32,8 @@ function mostrarMatriz() {
   contentMatriz.style.justifyContent = "space-around"
 }
 
-function botonGuardarf() {
+
+function botonGuardarF() {
   if (botonGuardar) {
     const metodosh2 = document.getElementById("metodosh2").textContent.trim()
     if (metodosh2 === "Cramer") {
@@ -50,12 +57,32 @@ function subHeaderStyle(){
   TablaGMatriz.style.display = "block"
   const headerOperacion = document.getElementById("headerOperacion")
   headerOperacion.style.justifyContent = "space-between"
-  const H2Calculadora = document.getElementById("h2Calculadora")
-  H2Calculadora.style.display = "none"
   const H2MatrizContent = document.getElementById("H2MatrizContent")
   H2MatrizContent.style.display = "block"
   const Calculadora = document.getElementById("Calculadora")
   Calculadora.style.display = "none"
-  const contentMatriz = document.getElementById("contentMatriz")
+  const contentMatriz = document.querySelector(".contentMatriz")
   contentMatriz.style.justifyContent = "flex-start"
 }
+
+const botones = document.querySelectorAll(".boton-operacion")
+
+botones.forEach(boton => {
+  boton.addEventListener("click", function(e) {
+    e.preventDefault()
+
+    const metodo = this.getAttribute("data-metodo")
+    
+    switch(metodo) {
+      case "calculadora":
+        llamarCalculadora()
+        break;
+      case "gauss":
+        GaussJordan()
+        break;
+      case "cramer":
+        cramer()
+        break
+    }
+  })
+})
