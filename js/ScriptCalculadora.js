@@ -1,7 +1,7 @@
 function llamarCalculadora() {
     document.getElementById("metodosh2").innerHTML = "Calculadora"
-    const Calculadora = document.getElementById("Calculadora")
-    Calculadora.style.display = "block"
+    const MostrarCalculadora = document.querySelector(".calculadora")
+    MostrarCalculadora.style.display = "grid"
 
     document.getElementById("h2TopOperarcion").innerHTML = ""
     const BotonGenerar = document.getElementById("botonGenerar")
