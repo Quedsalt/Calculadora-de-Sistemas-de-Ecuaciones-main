@@ -1,77 +1,129 @@
+/*VARIABLES DE TEMA*/
+/* Tema Noche */
+:root {
+  --bg-body: #0f172a;
+  --bg-card: #1e293b;
+  --bg-input: rgba(13, 27, 42, 0.3);
+  --text-color: #e2e8f0;
+  --border-color: #38bdf8;
+  --button-primary: #38bdf8;
+  --button-primary-hover: #0ea5e9;
+  --button-calculator: #1e293b;
+  --operator-color: #38bdf8;
+  --ac-color: #f87171;
+}
+
+/* Tema Dia */
+body.day-theme {
+  --bg-body: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-input: #f1f5f9;
+  --text-color: #1e293b;
+  --border-color: #94a3b8;
+  --button-primary: #3b82f6;
+  --button-primary-hover: #2563eb;
+  --button-calculator: #e2e8f0;
+  --operator-color: #0ea5e9;
+  --ac-color: #f87171;
+}
+
+/*ESTILOS BASE*/
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 10px;
-  background: linear-gradient(#e8fffe, rgb(163, 255, 250), #e8fffe);
-  color: #ffffff;
-}
-
-.logo {
-  font-size: 40px;
-}
-
-button {
-  padding: 8px 15px;
-  color: red;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-#botonGenerar {
-  height: 35px;
-}
-#GuardarBoton, #GuardarBoton a{
-  background-color: #FF2B00;
-  color: #ffffff;
-}
-
-button:hover {
-  background-color: hsl(341, 100%, 94%);
-}
-
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input {
-  text-align: center;
+  background: var(--bg-body);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 a {
   text-decoration: none;
-  color: red;
+  color: var(--button-primary);
 }
-/*Principal*/
 
 li {
-  list-style-type: none
+  list-style: none;
 }
+
+input {
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--bg-input);
+  color: var(--text-color);
+  padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/*COMPONENTES*/
+.logo {
+  font-size: 40px;
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: inherit;
+  padding: 5px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+#theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Botones genéricos */
+button {
+  padding: 8px 15px;
+  background-color: var(--button-primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: var(--button-primary-hover);
+}
+
+/* Header y navegación */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #FF2B00;
-  border: 2px solid #FF2B00;
+  background-color: var(--bg-card);
+  border: 2px solid var(--border-color);
+  padding: 0 10px;
 }
 
 .subHeader ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffffff;
-  color: red;
-  margin: 0px 0px 5px 0px;
-  border: 2px solid #FF2B00;
+  background-color: var(--bg-card);
+  color: var(--text-color);
+  margin: 0 0 5px 0;
+  border: 2px solid var(--border-color);
   padding: 10px;
   font-size: large;
 }
 
-Header {
-  padding: 0px 10px 0px;
-}
-
+/* Contenido principal */
 .contentGlobal {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
@@ -81,56 +133,39 @@ Header {
   margin: 0 auto;
 }
 
+/* Sección de operación */
 #headerOperacion {
   display: flex;
-  background-color: #FF2B00;
-  padding: 15px 10px 15px 10px;
+  background-color: var(--bg-card);
+  padding: 15px 10px;
   margin-top: 70px;
-
-  box-sizing: border-box;
   align-items: center;
   justify-content: space-between;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  border: 2px solid #FF2B00;
+  border: 2px solid var(--border-color);
+  border-radius: 4px 4px 0 0;
 }
 
-#headerOperacion input, #tablaGMatriz input{
+#tablaGMatriz input {
   width: 40px;
   height: 30px;
-  border-color: #FF2B00;
-  border-radius: 0px;
-}
-
-input {
-  width: 50px;
-  height: 50px;
-  border: 2px solid #FF2B00;
-  border-radius: 4px;
-  box-sizing: border-box;
+  border-color: var(--border-color);
+  border-radius: 0;
 }
 
 #metodos {
   display: flex;
   justify-content: space-around;
-  color: #ffffff;
+  color: var(--text-color);
 }
 
-.Solucion {
-  font-size: 1.2em;
-  padding: 10px;
-  background-color: #FF2B00;
-  border: 2px solid #FF2B00;
-  border-top: 0px;
-}
-
+/* Contenido de matrices y calculadora */
 .contentMatriz {
   height: clamp(300px, 70vh, 500px);
   display: flex;
-  background-color: #ffffff;
-  border: 2px solid #FF2B00;
-  color: #FF2B00;
-  border-top: 0px;
+  background-color: var(--bg-card);
+  color: var(--text-color);
+  border: 2px solid var(--border-color);
+  border-top: none;
   flex-direction: column;
   align-items: center;
   gap: 30px;
@@ -143,83 +178,59 @@ input {
   gap: 15px;
 }
 
-.contentMatriz h2, .pasos h3 {
-  margin: 0px;
+.contentMatriz h2,
+.pasos h3 {
+  margin: 0;
   padding: 10px;
   text-align: center;
 }
 
-.pasos {
-  background-color: #A31B00;
-  border: 2px solid #FF2B00;
-  border-top: 0px;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
+.Solucion {
+  font-size: 1.2em;
+  padding: 10px;
+  background-color: var(--bg-card);
+  border: 2px solid var(--border-color);
+  border-top: none;
 }
 
-.herramientas, .estudios {
+.pasos {
+  background-color: var(--bg-card);
+  border: 2px solid var(--border-color);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+}
+
+/* Barras laterales */
+.herramientas,
+.estudios {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #ffffff;
-  color: #FF2B00;
-  box-sizing: border-box;
+  background-color: var(--bg-card);
+  color: var(--text-color);
   margin-top: 68px;
-
-  border: 2px solid #FF2B00;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
 }
 
-.herramientas ul, .estudios ul {
-  padding: 0px;
+.herramientas ul,
+.estudios ul {
+  padding: 0;
 }
 
-.herramientas li, .estudios li {
+.herramientas li,
+.estudios li {
   margin: 65px;
 }
 
 /* Calculadora */
-#Calculadora {
-  background-color: #FF2B00;
-  border: 2px solid #FF2B00;
-  border-radius: 4px;
-  display: none;
-}
-
-.Pantalla {
-  background-color: #e8fffe;
-  height: 100px;
-  border: 2px solid #FF2B00;
-}
-
-.tablaBotones tbody {
-  display: flex;
-  flex-direction: column;
-}
-
-.simbolos, .numeros {
-  width: clamp(40px, 12vmin, 50px);
-  height: clamp(40px, 12vmin, 50px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: clamp(16px, 4vmin, 28px);
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  margin: 4px;
-}
-
-/*diseño de la futura calculadora*/
 .calculadora {
   max-width: 360px;
-  background-color: #0d1b2a;
+  background-color: var(--bg-card);
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19);
-  display: grid;
+  display: none;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
@@ -230,8 +241,8 @@ input {
   font-size: 20px;
   border: none;
   border-radius: 5px;
-  background-color: rgb(13, 27, 42);
-  color: #e8fffe;
+  background-color: var(--button-calculator);
+  color: var(--text-color);
   box-shadow: -1px 1px 30px -5px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: transform 0.1s ease, box-shadow 0.1s ease;
@@ -248,63 +259,59 @@ input {
   font-size: 20px;
   text-align: right;
   margin-bottom: 10px;
-  padding: 20px;
   border-radius: 5px;
-  color: #e8fffe;
-  background-color: rgba(13, 27, 42, 0.3);
+  color: var(--text-color);
+  background-color: var(--bg-input);
   border: none;
-  box-sizing: border-box;
   grid-column: span 4;
 }
 
 .operadores {
-  color: #219ebc;
+  color: var(--operator-color);
 }
 
 #ac {
-  color: #FF2B00;
+  color: var(--ac-color);
 }
 
 .equal {
   grid-column: span 2;
 }
 
-@media (max-width:900px){
-  h1 {
-    font-size: 20px;
-  }
-  h2 {
-    font-size: 15px;
-  }
-  h3 {
-    font-size: 12px;
-  }
-  h4{
-    font-size: 8px;
-  }
+/*MEDIA QUERIES*/
+@media (max-width: 900px) {
+  h1 { font-size: 20px; }
+  h2 { font-size: 15px; }
+  h3 { font-size: 12px; }
+  h4 { font-size: 8px; }
 
-  .herramientas, .estudios{
+  .herramientas, .estudios {
     display: none;
   }
 
   .contentGlobal {
     grid-template-columns: 1fr;
+    margin-top: 25px;
   }
+
   .contentMatriz {
-    height: clamp(300px, 70vh, 700px);
+    height: 500px;
   }
 
-  #headerOperacion{
+  #headerOperacion {
     padding: 5px;
-    margin-top: 0px;
-  }  
-
+    margin-top: 0;
+  }
 }
 
-@media (max-height:625PX){
+@media (max-height: 585px) {
+  .calculadora button {
+    height: 40px;
+  }
+}
 
-  .simbolos, .numeros {
-    width: clamp(45px, 10vmin, 150px);
-    height: clamp(10px, 4vmin, 40px);
+@media (max-height: 950px) {
+  .contentMatriz {
+    height: 500px;
   }
 }
