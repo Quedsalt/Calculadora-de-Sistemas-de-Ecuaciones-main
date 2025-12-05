@@ -28,8 +28,6 @@ function mostrarMatriz() {
   }
 
   contenedorGuardar.style.display = "block"
-  const contentMatriz = document.getElementById("contentMatriz")
-  contentMatriz.style.justifyContent = "space-around"
 }
 
 
@@ -59,8 +57,8 @@ function subHeaderStyle(){
   headerOperacion.style.justifyContent = "space-between"
   const H2MatrizContent = document.getElementById("H2MatrizContent")
   H2MatrizContent.style.display = "block"
-  const Calculadora = document.getElementById("Calculadora")
-  Calculadora.style.display = "none"
+  const MostrarCalculadora = document.querySelector(".calculadora")
+  MostrarCalculadora.style.display = "none"
   const contentMatriz = document.querySelector(".contentMatriz")
   contentMatriz.style.justifyContent = "flex-start"
 }
@@ -86,3 +84,18 @@ botones.forEach(boton => {
     }
   })
 })
+
+const themeToggle = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  // Ver si el usuario ya tiene una preferencia guardada
+  const savedTheme = localStorage.getItem('theme') || 'night';
+  if (savedTheme === 'day') {
+    body.classList.add('day-theme');
+  }
+
+  themeToggle.addEventListener('click', () => {
+    body.classList.toggle('day-theme');
+    const currentTheme = body.classList.contains('day-theme') ? 'day' : 'night';
+    localStorage.setItem('theme', currentTheme);
+  });
