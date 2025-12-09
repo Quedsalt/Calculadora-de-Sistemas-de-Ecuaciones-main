@@ -1,6 +1,6 @@
 document.getElementById("botonGenerar").addEventListener("click", mostrarMatriz)
-document.getElementById("GuardarBoton").addEventListener("click", botonGuardarF)
-document.getElementById('GuardarBoton').addEventListener('click', function() {
+document.getElementById('GuardarBoton').addEventListener('click', () => {
+  botonGuardarF()
   document.getElementById('output').scrollIntoView({ behavior: 'smooth' })
 })
 
