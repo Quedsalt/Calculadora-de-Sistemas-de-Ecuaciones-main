@@ -125,17 +125,54 @@ botones.forEach(boton => {
 })
 
 // Estilos de la pagina Noche/Dia
-const themeToggle = document.getElementById('theme-toggle')
-  const body = document.body
 
-  // Ver si el usuario ya tiene una preferencia guardada
-  const savedTheme = localStorage.getItem('theme') || 'night'
-  if (savedTheme === 'day') {
-    body.classList.add('day-theme')
-  }
+// Referencias a los elementos del DOM
+const themeToggleBtn = document.getElementById('theme-toggle')
+const modeToggleCheckbox = document.getElementById('modeToggle')
+const body = document.body
 
-  themeToggle.addEventListener('click', () => {
+// 1. Lógica para establecer el tema inicial
+function setInitialTheme() {
+    const savedTheme = localStorage.getItem('theme')
+    
+    if (savedTheme) {
+        // Si hay un tema guardado, aplicarlo
+        if (savedTheme === 'day') {
+            body.classList.add('day-theme')
+            modeToggleCheckbox.checked = true; // Sincroniza el checkbox al estado 'checked' (día)
+        } else {
+            // Si savedTheme es 'night' o cualquier otro valor, asegura que no tenga day-theme
+            body.classList.remove('day-theme')
+            modeToggleCheckbox.checked = false // Sincroniza el checkbox al estado 'unchecked' (noche)
+        }
+    } else {
+        // Si no hay tema guardado en localStorage, detecta la preferencia del sistema
+        const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+
+        if (!prefersDarkMode) {
+            // Si el sistema prefiere CLARO (Día), aplica el tema de día
+            body.classList.add('day-theme')
+            modeToggleCheckbox.checked = true // Sincroniza el checkbox
+            localStorage.setItem('theme', 'day') // Guarda la preferencia del sistema para futuras visitas
+        } else {
+            // Si el sistema prefiere OSCURO (Noche), aplica el tema de noche
+            body.classList.remove('day-theme')
+            modeToggleCheckbox.checked = false // Sincroniza el checkbox
+            localStorage.setItem('theme', 'night') // Guarda la preferencia del sistema
+        }
+    }
+}
+
+// 2. Lógica para cambiar el tema al hacer clic en el toggle
+themeToggleBtn.addEventListener('click', () => {
+    // Esto lo dispara el click en el div.toggle--btn
     body.classList.toggle('day-theme')
+  
+
+    // Guardar la nueva preferencia en localStorage
     const currentTheme = body.classList.contains('day-theme') ? 'day' : 'night'
     localStorage.setItem('theme', currentTheme)
-  })
+});
+
+// Ejecutar la función inicial al cargar la página
+document.addEventListener('DOMContentLoaded', setInitialTheme)
