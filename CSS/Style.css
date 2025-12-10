@@ -6,25 +6,25 @@
   --bg-input: rgba(13, 27, 42, 0.3);
   --text-color: #fff;
   --border-color: linear-gradient(to right, #d19dff, #905cff, #c07eff, #d19dff) 1;
-  --button-primary: linear-gradient(to right, #d19dff, #905cff, #c07eff, #d19dff);
-  --button-primary-hover: linear-gradient(to right, #dfbefc, #a880ff, #c791fa, #dfbefc);
+  --button-primary: linear-gradient(to right, #d19dff, #c07eff, #d19dff);
+  --button-primary-hover: linear-gradient(to right, #dfbefc, #c791fa, #dfbefc);
   --button-calculator: #1e293b;
   --operator-color: #38bdf8;
-  --ac-color: #f87171;
+  --ac-color: #ff0000;
 }
 
 /* Tema Dia */
 body.day-theme {
-  --bg-body: #f8fafc;
+  --bg-body: linear-gradient(to right, #ffffff, #fffeea, #feffce, #ffffff);
   --bg-card: #ffffff;
-  --bg-input: #f1f5f9;
-  --text-color: #1e293b;
-  --border-color: #f59e0b;
-  --button-primary: #3b82f6;
-  --button-primary-hover: #2563eb;
-  --button-calculator: #e2e8f0;
-  --operator-color: #0ea5e9;
-  --ac-color: #f87171;
+  --bg-input: #F5F5F5;
+  --text-color: #000000;
+  --border-color: linear-gradient(to right, #fde937, #fdb724, #f4f148, #fd9c24) 1;
+  --button-primary: linear-gradient(to right,#ffda0b, #fdec24, #ffda0b) ;
+  --button-primary-hover: linear-gradient(to right, #f3f16d, #ffd781, #f3f183);
+  --button-calculator: #1e293b;
+  --operator-color: #38bdf8;
+  --ac-color: #ff0000;
 }
 
 /*ESTILOS BASE*/
@@ -412,16 +412,6 @@ header {
     top: 60%;
     left: 75%;
     animation-delay: 0.8s;
-}
-.star:nth-child(4) {
-    top: 30%;
-    left: 60%;
-    animation-delay: 1s;
-}
-.star:nth-child(5) {
-    top: 50%;
-    left: 90%;
-    animation-delay: 1.3s;
 }
 @keyframes twinkle {
     0% {
