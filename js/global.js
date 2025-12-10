@@ -38,6 +38,8 @@ function botonGuardarF() {
       guardarMatriz()
     } else if (metodosh2 === "Gauss Jordan"){
       resultado()
+    }else if(metodosh2 === "Producto Cruz"){
+      calcularProductoCruz()
     }
   } else {
     document.getElementById("output").innerHTML = "NO hay seleccionada un metodo disponible"
@@ -62,6 +64,26 @@ function subHeaderStyle(){
   MostrarCalculadora.style.display = "none"
   const contentMatriz = document.querySelector(".contentMatriz")
   contentMatriz.style.justifyContent = "flex-start"
+  const ProdtCruz = document.querySelector(".productoCruz")
+  ProdtCruz.style.display = "none"
+}
+
+function OcultarMatrices(){
+  document.getElementById("h2TopOperarcion").innerHTML = ""
+    const BotonGenerar = document.getElementById("botonGenerar")
+    const TablaGMatriz = document.getElementById("tablaGMatriz")
+    BotonGenerar.style.display = "none"
+    TablaGMatriz.style.display = "none"
+
+    const headerOperacion = document.getElementById("headerOperacion")
+    headerOperacion.style.justifyContent = "center"
+
+    contenedorPrincipal.innerHTML = ""
+    contenedorGuardar.style.display = "none"
+    document.getElementById("output").innerHTML = ""
+
+    const H2MatrizContent = document.getElementById("H2MatrizContent")
+    H2MatrizContent.style.display = "none"
 }
 
 //Llama los metodos
@@ -82,6 +104,12 @@ botones.forEach(boton => {
         break;
       case "cramer":
         cramer()
+        break
+      case "ProductoCruz":
+        llamarProductoCruz()
+        break
+      case "Grafica3D":
+        llamarGrafica3D()
         break
     }
   })

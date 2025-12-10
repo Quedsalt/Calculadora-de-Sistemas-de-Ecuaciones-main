@@ -1,25 +1,14 @@
 function llamarCalculadora() {
     document.getElementById("metodosh2").innerHTML = "Calculadora"
+    //muestra la calculadora
     const MostrarCalculadora = document.querySelector(".calculadora")
     MostrarCalculadora.style.display = "grid"
-
-    document.getElementById("h2TopOperarcion").innerHTML = ""
-    const BotonGenerar = document.getElementById("botonGenerar")
-    const TablaGMatriz = document.getElementById("tablaGMatriz")
-    BotonGenerar.style.display = "none"
-    TablaGMatriz.style.display = "none"
-
-    const headerOperacion = document.getElementById("headerOperacion")
-    headerOperacion.style.justifyContent = "center"
-
-    contenedorPrincipal.innerHTML = ""
-    contenedorGuardar.style.display = "none"
-    document.getElementById("output").innerHTML = ""
-
-    const H2MatrizContent = document.getElementById("H2MatrizContent")
-    H2MatrizContent.style.display = "none"
     const contentMatriz = document.querySelector(".contentMatriz")
     contentMatriz.style.justifyContent = "center"
+    OcultarMatrices()
+    //Oculta el producto cruz
+    const ProdtCruz = document.querySelector(".productoCruz")
+    ProdtCruz.style.display = "none"
 }
 
 const display = document.querySelector("#display")
