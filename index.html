@@ -8,8 +8,27 @@
   </head>
   <body>
     <header>
-      <div class="logo">Logo</div>
       <h1>Calculadora</h1>
+    </header>
+    <nav class="subHeader">
+      <ul class="menuContent">
+        <li class="open_submenu">
+          <a href="#">
+            Mas Opciones
+            <i></i>
+          </a>
+          <div class="submenu">
+            <ul>
+              <li><a class="boton-operacion" href="#" role="button" data-metodo="calculadora">Calculadora</a></li>
+              <li><a class="boton-operacion" href="#" role="button" data-metodo="gauss">Gauss Jordan</a></li>
+              <li><a class="boton-operacion" href="#" role="button" data-metodo="cramer">Cramer</a></li>
+              <li><a class="boton-operacion" href="#" role="button" data-metodo="ProductoCruz">ProductoCruz</a></li>
+              <li><a class="boton-operacion canvas3D" href="#" role="button" data-metodo="Grafica3D">Grafica3D</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+
       <label class="toggle toggle--daynight">
         <input type="checkbox" class="toggle--checkbox" id="modeToggle">
         <div class="toggle--btn"  id="theme-toggle" aria-label="Cambiar tema">
@@ -27,18 +46,8 @@
             </div>
             <div class="cloud cloud1"></div>
             <div class="cloud cloud2"></div>
-            <div class="cloud cloud3"></div>
         </div>
-    </label>
-    </header>
-    <nav class="subHeader">
-      <ul>
-        <li><a class="boton-operacion" href="#" role="button" data-metodo="calculadora">Calculadora</a></li>
-        <li><a class="boton-operacion" href="#" role="button" data-metodo="gauss">Gauss Jordan</a></li>
-        <li><a class="boton-operacion" href="#" role="button" data-metodo="cramer">Cramer</a></li>
-        <li><a class="boton-operacion" href="#" role="button" data-metodo="ProductoCruz">ProductoCruz</a></li>
-        <li><a class="boton-operacion" href="#" role="button" data-metodo="Grafica3D">Grafica3D</a></li>
-      </ul>
+      </label>
     </nav>
     <main class="contentGlobal">
       <!--Barra lateral izquierda-->
@@ -49,7 +58,7 @@
           <li><a class="boton-operacion" href="#" role="button" data-metodo="gauss">Gauss Jordan</a></li>
           <li><a class="boton-operacion" href="#" role="button" data-metodo="cramer">Cramer</a></li>
           <li><a class="boton-operacion" href="#" role="button" data-metodo="ProductoCruz">ProductoCruz</a></li>
-          <li><a class="boton-operacion" href="#" role="button" data-metodo="Grafica3D">Grafica3D</a></li>
+          <li><a class="boton-operacion canvas3D" href="#" role="button" data-metodo="Grafica3D">Grafica3D</a></li>
         </ul>
       </nav>
       <!--Customizacion de las matrices-->
